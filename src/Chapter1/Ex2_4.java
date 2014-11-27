@@ -1,4 +1,4 @@
-package Ex2;
+package Chapter1;
 
 /**
  * Created by julian on 26.11.14.
