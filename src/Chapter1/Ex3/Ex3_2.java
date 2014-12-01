@@ -1,4 +1,4 @@
-package Chapter1;
+package Chapter1.Ex3;
 
 import java.lang.*;
 
