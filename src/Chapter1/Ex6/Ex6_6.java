@@ -1,5 +1,7 @@
 package Chapter1.Ex6;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 /**
  * Created by julian on 04.12.14.
  */
@@ -20,29 +22,39 @@ public class Ex6_6 {
 
         System.out.println("Prawo przechodnosci implikacji");
         for (int i = 0; i < 8; i++) {
-            System.out.println();
+            System.out.println(impl((impl(m[i][0],m[i][1]) && impl(m[i][1],m[i][2])),(impl(m[i][0],m[i][2]))));
+        }
+
+        System.out.println('\n' +"Prawo rozdzielnosci alternatywy wzgledem koniunkcji");
+        for (int i = 0; i < 8; i++){
+            System.out.println((m[i][0] || (m[i][1] && m[i][2])) == ((m[i][0] || m[i][1]) && (m[i][0] || m[i][2])));
+        }
+
+        System.out.println('\n' + "Prawo rodzielnosci koniunkcji wzgledem alternatywy" );
+        for(int i = 0; i < 8; i++){
+            System.out.println((m[i][0] && (m[i][1] || m[i][2])) == ((m[i][0] && m[i][1]) || (m[i][0] && m[i][2])));
+        }
+
+        System.out.println('\n' + "Prawo odrywania");
+        for(int i = 0; i < 8; i++){
+            System.out.println(impl((impl(m[i][0],m[i][1]) && m[i][1]),m[i][1]));
+        }
+
+        System.out.println('\n' + "Prawo eliminacji implkacji");
+        for(int i = 0; i<8; i++){
+            System.out.println((impl(m[i][0],m[i][1]) == (!m[i][0] || m[i][1])));
         }
     }
 
-    private static void impl(boolean b, boolean b1, int a, int b2 ) {
-        if(b[][a] == true && b1[][b] == false){
-            System.out.println(false);
+    private static boolean impl(boolean b, boolean b1) {
+        if(b == true && b1 == false){
+            return false;
         } else {
-            System.out.println(true);
+            return true;
         }
 
     }
 
-    public boolean impl(boolean x[][],boolean y[][], int a, int b){
-        for(int i = 0; i < 4 ; i++){
-            if(x[i][a] == true && y[i][b] == false){
-                System.out.println(false);
-            } else {
-                System.out.println(true);
-            }
-        }
-        return true;
-    }
 
 
 }
