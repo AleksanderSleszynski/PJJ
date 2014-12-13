@@ -16,11 +16,11 @@ public class Ex7_2 {
         System.out.println("c = "+c);
         System.out.println("d = "+d);
 /* porównania obiektów */
-        System.out.println("...? "+a.equals(b));
-        System.out.println("...? "+a.equals(c));
-        System.out.println("...? "+a.compareTo(c));
-        System.out.println("...? "+c.compareTo(d));
-        System.out.println("...? "+d.compareTo(c));
+        System.out.println("Sprawdz czy a jest równe b? "+a.equals(b));
+        System.out.println("Sprawdz czy a jest równe c? "+a.equals(c));
+        System.out.println("Porównaj a z c? "+a.compareTo(c)); // 0 jesli rowne
+        System.out.println("Porównaj c z d? "+c.compareTo(d)); //jesli mniejsze -1
+        System.out.println("Porównaj d z c? "+d.compareTo(c)); // jeśli wieksze 1
 /* zmiana wartoĞci obiektu */
         a = Integer.valueOf(1000);
         b = Integer.valueOf("1000");
