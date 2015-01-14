@@ -6,7 +6,7 @@ package Chapter2.Ex10;
 public class Ex10_6 {
     public static void main(String[] args) {
         double rad = 2;
-        
+
         double deg = Math.toDegrees(rad);
         int d = (int)deg;
 
